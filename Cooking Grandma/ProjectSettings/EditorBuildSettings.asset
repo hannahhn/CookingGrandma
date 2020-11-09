@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Recipe_Scene.unity
+    guid: 38ac98a2e841dad45a9a61c4d6f8332c
+  - enabled: 1
+    path: Assets/Scenes/Chop_Lettuce.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Chop_Tomato.unity
+    guid: f5c71383e69c56f4d8eafead4653a4ab
+  - enabled: 1
+    path: Assets/Scenes/Cook_Burger.unity
+    guid: 7675540a4a129004bb207df7f933b0e8
+  - enabled: 1
+    path: Assets/Scenes/Combine_Ingredients_Salad.unity
+    guid: e0cf199b846b790469fead53fe37dafc
+  - enabled: 1
+    path: Assets/Scenes/Combine_Ingredients_Burger.unity
+    guid: e345e3d61e6f9bc41924e8bedef90b70
+  m_configObjects: {}
