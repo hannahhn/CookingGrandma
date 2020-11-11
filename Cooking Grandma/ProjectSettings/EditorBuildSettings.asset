@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/LevelLoader.unity
+    guid: ea5f29b50eb1a334da043ac00d92c222
+  - enabled: 1
     path: Assets/Scenes/Recipe_Scene.unity
     guid: 38ac98a2e841dad45a9a61c4d6f8332c
   - enabled: 1
@@ -15,12 +18,27 @@ EditorBuildSettings:
     path: Assets/Scenes/Chop_Tomato.unity
     guid: f5c71383e69c56f4d8eafead4653a4ab
   - enabled: 1
+    path: Assets/Scenes/Cook_Soup.unity
+    guid: ff7fdce8a14584649a5497c3476ba0df
+  - enabled: 1
+    path: Assets/Scenes/Cook_Pasta.unity
+    guid: a3d02cb956295ba459d7689fd10b24b0
+  - enabled: 1
     path: Assets/Scenes/Cook_Burger.unity
     guid: 7675540a4a129004bb207df7f933b0e8
+  - enabled: 1
+    path: Assets/Scenes/Cook_Steak.unity
+    guid: 97701888999812842bfe2cdd1651b3fd
   - enabled: 1
     path: Assets/Scenes/Combine_Ingredients_Salad.unity
     guid: e0cf199b846b790469fead53fe37dafc
   - enabled: 1
+    path: Assets/Scenes/Combine_Ingredients_Soup.unity
+    guid: 82cf95571afb9d74299f0e16153421ec
+  - enabled: 1
     path: Assets/Scenes/Combine_Ingredients_Burger.unity
     guid: e345e3d61e6f9bc41924e8bedef90b70
+  - enabled: 1
+    path: Assets/Scenes/Combine_Ingredients_Steak.unity
+    guid: 50bdcfc6f3cce7e4a9e4d2bfafd5f9f5
   m_configObjects: {}
