@@ -17,7 +17,6 @@ public class TimerScript : MonoBehaviour
     float maxTime = 6.0f;
     bool playerClicked = false;
 
-    // Start is called before the first frame update
     void Start()
     {
         timerBar = GetComponent<Image>();
@@ -26,7 +25,6 @@ public class TimerScript : MonoBehaviour
         redo_button.onClick.AddListener(redoScene);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if((currentTime / maxTime) > 0.574) // only for burger, shows cooked meat on pan

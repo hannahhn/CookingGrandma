@@ -12,6 +12,8 @@ public class OrderManager : MonoBehaviour
 
     void Start()
     {
+        // these if statements from lines 17-56 are to activate the checkmarks in the recipe list when
+        // the user has completed that ingredient
         if(Chop.lettuceComplete)
         {
             Lettuce_Complete.SetActive(true);
@@ -55,6 +57,24 @@ public class OrderManager : MonoBehaviour
 
         if(currentRecipe.Equals("Salad"))
         {
+            // if the player has already chopped the lettuce, then the chop lettuce button will be disabled in the recipe list
+            if(Chop.lettuceComplete)
+            {
+                Chop_Lettuce.interactable = false;
+            }
+            if(Chop.tomatoComplete)
+            {
+                Chop_Tomato.interactable = false;
+            }
+            if(Chop.lettuceComplete && Chop.tomatoComplete) // if the player has successfully chopped both the lettuce and the tomato, then the Combine Salad button will be enabled for the user to click
+            {
+                Combine_Salad.interactable = true;
+            }
+            if(RecipeManager.combineSaladComplete)
+            {
+                Combine_Salad.gameObject.SetActive(false);
+            }
+            // if the user finishes preparing all the ingredients in the recipe list for Salad, the "Next Order" button will appear
             if(Chop.lettuceComplete && Chop.tomatoComplete && RecipeManager.combineSaladComplete)
             {
                 Order_Complete.gameObject.SetActive(true);
@@ -62,6 +82,27 @@ public class OrderManager : MonoBehaviour
         }
         else if(currentRecipe.Equals("Soup"))
         {
+            if(Chop.tomatoComplete)
+            {
+                Chop_Tomato.interactable = false;
+            }
+            if(TimerScript.cookSoupComplete)
+            {
+                Cook_Soup.interactable = false;
+            }
+            if(TimerScript.cookPastaComplete)
+            {
+                Cook_Pasta.interactable = false;
+            }
+            if(Chop.tomatoComplete && TimerScript.cookSoupComplete && TimerScript.cookPastaComplete)
+            {
+                Combine_Soup.interactable = true;
+            }
+            if(RecipeManager.combineSoupComplete)
+            {
+                Combine_Soup.gameObject.SetActive(false);
+            }
+            // if the user finishes preparing all the ingredients in the recipe list for Soup, the "Next Order" button will appear
             if(Chop.tomatoComplete && TimerScript.cookSoupComplete && TimerScript.cookPastaComplete && RecipeManager.combineSoupComplete)
             {
                 Order_Complete.gameObject.SetActive(true);
@@ -69,6 +110,27 @@ public class OrderManager : MonoBehaviour
         }
         else if(currentRecipe.Equals("Burger"))
         {
+            if(Chop.lettuceComplete)
+            {
+                Chop_Lettuce.interactable = false;
+            }
+            if(Chop.tomatoComplete)
+            {
+                Chop_Tomato.interactable = false;
+            }
+            if(TimerScript.cookBurgerComplete)
+            {
+                Cook_Burger.interactable = false;
+            }
+            if(Chop.lettuceComplete && Chop.tomatoComplete && TimerScript.cookBurgerComplete)
+            {
+                Combine_Burger.interactable = true;
+            }
+            if(RecipeManager.combineBurgerComplete)
+            {
+                Combine_Burger.gameObject.SetActive(false);
+            }
+            // if the user finishes preparing all the ingredients in the recipe list for Burger, the "Next Order" button will appear
             if(Chop.lettuceComplete && Chop.tomatoComplete && TimerScript.cookBurgerComplete && RecipeManager.combineBurgerComplete)
             {
                 Order_Complete.gameObject.SetActive(true);
@@ -76,12 +138,23 @@ public class OrderManager : MonoBehaviour
         }
         else if(currentRecipe.Equals("Steak"))
         {
+            if(TimerScript.cookSteakComplete)
+            {
+                Cook_Steak.interactable = false;
+                Combine_Steak.interactable = true;
+            }
+            if(RecipeManager.combineSteakComplete)
+            {
+                Combine_Steak.gameObject.SetActive(false);
+            }
+            // if the user finishes preparing all the ingredients in the recipe list for Steak, the "Next Order" button will appear
             if(TimerScript.cookSteakComplete && RecipeManager.combineSteakComplete)
             {
                 Order_Complete.gameObject.SetActive(true);
             }
         }
 
+        // calls a corresponding function when the user clicks a button on the recipe list
         Chop_Lettuce.onClick.AddListener(ChopLettuceClicked);
         Chop_Tomato.onClick.AddListener(ChopTomatoClicked);
         Cook_Soup.onClick.AddListener(CookSoupClicked);
@@ -96,6 +169,7 @@ public class OrderManager : MonoBehaviour
         Order_Complete.onClick.AddListener(LoadNextOrder);
     }
 
+    // when the player clicks a button to perform a cooking functionality, it will load the corresponding scene
     void ChopLettuceClicked()
     {
         SceneManager.LoadScene("Chop_Lettuce");
@@ -169,6 +243,7 @@ public class OrderManager : MonoBehaviour
         }
 
         // temporary until game timer is made
+        // makes every level end after 2 orders are completed
         Debug.Log(GameManager.ordersComplete);
         if(GameManager.ordersComplete == 2)
         {

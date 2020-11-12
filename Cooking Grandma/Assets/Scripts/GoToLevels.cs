@@ -57,10 +57,4 @@ public class GoToLevels : MonoBehaviour
         currentLevel = "LevelFour";
         SceneManager.LoadScene("Recipe_Scene");
     }
-    /*
-    public void Unlock(int levelToUnlock)
-    {
-        buttons[levelToUnlock].interactable = true;
-    }
-    */
 }
