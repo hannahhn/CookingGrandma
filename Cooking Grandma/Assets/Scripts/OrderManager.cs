@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+// This script handles the buttons in the recipe scene, such as clicking on the "Chop" button or "Cook" button. This scripts calls the button's
+// respective function and brings the player to the respective scene once the button is clicked. This script also handles activating the checkmark
+// next to an ingredient in the current recipe once an ingredient has been successfully prepared.
 public class OrderManager : MonoBehaviour
 {
     public Button Chop_Lettuce, Chop_Tomato, Cook_Soup, Cook_Pasta, Cook_Burger, Cook_Steak, Combine_Salad, Combine_Soup, Combine_Burger, Combine_Steak, Order_Complete;
@@ -224,6 +227,7 @@ public class OrderManager : MonoBehaviour
     {
         // resetting all static variables
         Chop.lettuceComplete = Chop.tomatoComplete = TimerScript.cookSoupComplete = TimerScript.cookPastaComplete = TimerScript.cookBurgerComplete = TimerScript.cookSteakComplete = RecipeManager.combineSaladComplete = RecipeManager.combineSoupComplete = RecipeManager.combineBurgerComplete = RecipeManager.combineSteakComplete = false;
+
         GameManager.needNewOrder = true;
         if(currentRecipe.Equals("Salad"))
         {
@@ -244,19 +248,16 @@ public class OrderManager : MonoBehaviour
 
         // temporary until game timer is made
         // makes every level end after 2 orders are completed
-        Debug.Log(GameManager.ordersComplete);
+        Debug.Log("Orders Complete: " + GameManager.ordersComplete);
+        /*
         if(GameManager.ordersComplete == 2)
         {
-            if(GoToLevels.currentLevel == "LevelOne")
-                GoToLevels.levelOneComplete = true;
-            else if(GoToLevels.currentLevel == "LevelTwo")
-                GoToLevels.levelTwoComplete = true;
-            else if(GoToLevels.currentLevel == "LevelThree")
-                GoToLevels.levelThreeComplete = true;
-            SceneManager.LoadScene("LevelLoader");
+            SceneManager.LoadScene("Score_Scene");
         }
         else
             SceneManager.LoadScene("Recipe_Scene");
+        */
+        SceneManager.LoadScene("Recipe_Scene");
     }
 
 }

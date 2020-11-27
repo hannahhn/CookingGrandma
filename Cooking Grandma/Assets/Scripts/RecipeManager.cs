@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+// This ingredient handles the Combine Ingredients function
 public class RecipeManager : MonoBehaviour
 {
     public GameObject completedDish;
@@ -14,6 +15,10 @@ public class RecipeManager : MonoBehaviour
     void Start ()
     {
         checkmark.onClick.AddListener(checkmarkClicked);
+    }
+
+    void Update()
+    {
     }
 
     public void IngredientAdded()

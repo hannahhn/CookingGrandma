@@ -8,16 +8,17 @@ public class Chop : MonoBehaviour
 {
   public Sprite Full_Ingredient, Slice1, Slice2, Slice3, Slice4, Slice5;
   SpriteRenderer currentSprite;
-  public Button checkmark;
+  public Button checkmark, Ingredient_Button;
   public static bool lettuceComplete, tomatoComplete = false;
 
   void Start ()
   {
-       currentSprite = gameObject.GetComponent<SpriteRenderer> ();
+       currentSprite = gameObject.GetComponent<SpriteRenderer>();
        checkmark.onClick.AddListener(checkmarkClicked);
+       Ingredient_Button.onClick.AddListener(Click_Ingredient);
   }
 
-  public void OnMouseDown()
+  public void Click_Ingredient()
   {
       if(currentSprite.sprite.Equals(Full_Ingredient))
           currentSprite.sprite = Slice1;
@@ -46,4 +47,5 @@ public class Chop : MonoBehaviour
   {
       SceneManager.LoadScene("Recipe_Scene");
   }
+
 }

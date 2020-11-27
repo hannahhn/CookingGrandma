@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelLoader.unity
     guid: ea5f29b50eb1a334da043ac00d92c222
   - enabled: 1
+    path: Assets/Scenes/Loading_Scene.unity
+    guid: 4c17db99bd439714592c18c8d0b672e9
+  - enabled: 1
     path: Assets/Scenes/Recipe_Scene.unity
     guid: 38ac98a2e841dad45a9a61c4d6f8332c
   - enabled: 1
@@ -41,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Combine_Ingredients_Steak.unity
     guid: 50bdcfc6f3cce7e4a9e4d2bfafd5f9f5
+  - enabled: 1
+    path: Assets/Scenes/Score_Scene.unity
+    guid: 7b8778f67fb926a4f9f2f1da2c47f77d
   m_configObjects: {}

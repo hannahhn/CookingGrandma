@@ -27,7 +27,7 @@ public class TimerScript : MonoBehaviour
 
     void Update()
     {
-        if((currentTime / maxTime) > 0.574) // only for burger, shows cooked meat on pan
+        if((currentTime / maxTime) > 0.574) // only for burger and steak, shows cooked meat on pan
         {
             CompleteIngredient.SetActive(true);
         }

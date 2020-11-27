@@ -37,24 +37,28 @@ public class GoToLevels : MonoBehaviour
     public void LevelOneClicked()
     {
         currentLevel = "LevelOne";
-        SceneManager.LoadScene("Recipe_Scene");
+        GameTimer.timeLeft = 45;
+        SceneManager.LoadScene("Loading_Scene");
     }
 
     public void LevelTwoClicked()
     {
         currentLevel = "LevelTwo";
-        SceneManager.LoadScene("Recipe_Scene");
+        GameTimer.timeLeft = 60;
+        SceneManager.LoadScene("Loading_Scene");
     }
 
     public void LevelThreeClicked()
     {
         currentLevel = "LevelThree";
-        SceneManager.LoadScene("Recipe_Scene");
+        GameTimer.timeLeft = 75;
+        SceneManager.LoadScene("Loading_Scene");
     }
 
     public void LevelFourClicked()
     {
         currentLevel = "LevelFour";
-        SceneManager.LoadScene("Recipe_Scene");
+        GameTimer.timeLeft = 90;
+        SceneManager.LoadScene("Loading_Scene");
     }
 }

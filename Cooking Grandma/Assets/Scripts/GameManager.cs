@@ -1,7 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
+// This script handles detecting which level the user is on, and enabling the recipes the user has currently unlocked
+// in order for them to prepare. The game timer is also handled in this script.
 public class GameManager : MonoBehaviour
 {
     public GameObject Salad_Recipe, Soup_Recipe, Burger_Recipe, Steak_Recipe;
