@@ -21,13 +21,6 @@ public class Score : MonoBehaviour
 
         CalculateScore();
 
-        /*
-        playerScore = 1100;
-        goalScore = 900;
-        expertScore = 1000;
-        StartCoroutine(CountUpScore());
-        */
-
         if(GoToLevels.currentLevel.Equals("LevelOne"))
         {
             goalScore = 150;
@@ -54,7 +47,14 @@ public class Score : MonoBehaviour
         }
 
         // resetting all static variables
-        GameTimer.timeLeft = 60;
+        if(GoToLevels.currentLevel.Equals("LevelOne"))
+            GameTimer.timeLeft = 45;
+        else if(GoToLevels.currentLevel.Equals("LevelTwo"))
+                GameTimer.timeLeft = 60;
+        else if(GoToLevels.currentLevel.Equals("LevelThree"))
+                GameTimer.timeLeft = 75;
+        else if(GoToLevels.currentLevel.Equals("LevelFour"))
+                GameTimer.timeLeft = 90;
         GameTimer.timeUp = false;
         GameManager.needNewOrder = true;
         Chop.lettuceComplete = Chop.tomatoComplete = TimerScript.cookSoupComplete = TimerScript.cookPastaComplete = TimerScript.cookBurgerComplete = TimerScript.cookSteakComplete = RecipeManager.combineSaladComplete = RecipeManager.combineSoupComplete = RecipeManager.combineBurgerComplete = RecipeManager.combineSteakComplete = false;
@@ -103,7 +103,12 @@ public class Score : MonoBehaviour
 
         if(playerScore >= goalScore)
         {
+            SoundManager.PlaySound("trumpet");
             Confetti.SetActive(true);
+        }
+        else
+        {
+            SoundManager.PlaySound("fail");
         }
     }
 

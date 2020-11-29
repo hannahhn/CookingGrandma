@@ -44,8 +44,8 @@ public class Drag_Ingredient : MonoBehaviour
     {
       if(collision.gameObject.CompareTag("Combiner"))
       {
-        GameObject.Find("RecipeManager").GetComponent<RecipeManager>().IngredientAdded();
-        Destroy(gameObject);
+          GameObject.Find("RecipeManager").GetComponent<RecipeManager>().IngredientAdded();
+          Destroy(gameObject);
       }
     }
 }

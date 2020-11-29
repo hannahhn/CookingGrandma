@@ -49,6 +49,7 @@ public class RecipeManager : MonoBehaviour
 
     void DishComplete()
     {
+        SoundManager.PlaySound("trumpet");
         completedDish.SetActive(true);
         checkmark.gameObject.SetActive(true);
     }

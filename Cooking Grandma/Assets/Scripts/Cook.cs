@@ -46,6 +46,10 @@ public class Cook : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Combiner"))
         {
+            if(ingredientInPan.CompareTag("Hamburger") || ingredientInPan.CompareTag("Steak"))
+                SoundManager.PlaySound("cook");
+            else if(ingredientInPan.CompareTag("Soup"))
+                SoundManager.PlaySound("boil");
             Destroy(gameObject);
             ingredientInPan.SetActive(true);
             timerBar.SetActive(true);

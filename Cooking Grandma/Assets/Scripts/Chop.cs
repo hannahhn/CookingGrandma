@@ -21,15 +21,28 @@ public class Chop : MonoBehaviour
   public void Click_Ingredient()
   {
       if(currentSprite.sprite.Equals(Full_Ingredient))
+      {
+          SoundManager.PlaySound("chop");
           currentSprite.sprite = Slice1;
+      }
       else if(currentSprite.sprite.Equals(Slice1))
+      {
+          SoundManager.PlaySound("chop");
           currentSprite.sprite = Slice2;
+      }
       else if(currentSprite.sprite.Equals(Slice2))
+      {
+          SoundManager.PlaySound("chop");
           currentSprite.sprite = Slice3;
+      }
       else if(currentSprite.sprite.Equals(Slice3))
+      {
+          SoundManager.PlaySound("chop");
           currentSprite.sprite = Slice4;
+      }
       else if(currentSprite.sprite.Equals(Slice4))
       {
+          SoundManager.PlaySound("chop");
           currentSprite.sprite = Slice5;
           checkmark.gameObject.SetActive(true);
           if(Full_Ingredient.name.Equals("Lettuce"))
